@@ -1,0 +1,42 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #DB4C3F;
+$value-color:       #fff;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+$label-color:       rgba(255, 255, 255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-list styles
+// ----------------------------------------------------------------------------
+.widget-tasks {
+
+  background-color: $background-color;
+  vertical-align: top;
+
+  .title {
+    color: $title-color;
+  }
+
+  ol {
+    margin: 0 20px;
+    text-align: left;
+    color: $label-color;
+  }
+
+  li {
+    margin-bottom: 15px;
+  }
+
+  .label {
+    color: $label-color;
+    font-size: 24px;
+  }
+
+ .assignee {
+    font-size: 14px;
+    padding-left:15px;
+ }
+
+}

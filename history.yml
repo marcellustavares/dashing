@@ -1,0 +1,43 @@
+---
+convergence: |+
+  data: {"points":[{"x":706,"y":40},{"x":707,"y":2},{"x":708,"y":34},{"x":709,"y":21},{"x":710,"y":40},{"x":711,"y":11},{"x":712,"y":37},{"x":713,"y":10},{"x":714,"y":12},{"x":715,"y":36}],"id":"convergence","updatedAt":1477232710}
+
+buzzwords: |+
+  data: {"items":[{"label":"Synergy","value":12},{"label":"Turn-key","value":4},{"label":"Leverage","value":1},{"label":"Enterprise","value":26},{"label":"Paradigm shift","value":0},{"label":"Exit strategy","value":21},{"label":"Web 2.0","value":19},{"label":"Pivoting","value":4},{"label":"Streamlininess","value":13}],"id":"buzzwords","updatedAt":1477179927}
+
+valuation: |+
+  data: {"current":77,"last":34,"id":"valuation","updatedAt":1477229619}
+
+karma: |+
+  data: {"current":169744,"last":154069,"id":"karma","updatedAt":1477229619}
+
+synergy: |+
+  data: {"value":21,"id":"synergy","updatedAt":1477176915}
+
+myFilter: |+
+  data: {"current":3,"id":"myFilter","updatedAt":1477173448}
+
+fp-5-filter: |+
+  data: {"current":3,"id":"fp-5-filter","updatedAt":1477258403}
+
+fp-4-filter: |+
+  data: {"current":14,"id":"fp-4-filter","updatedAt":1477258403}
+
+fp-3-filter: |+
+  data: {"current":67,"id":"fp-3-filter","updatedAt":1477258403}
+
+sprint-days-remaining: |+
+  data: {"current":0,"id":"sprint-days-remaining","updatedAt":1477258403}
+
+sprint-progress: |+
+  data: {"value":51,"id":"sprint-progress","updatedAt":1477258403}
+
+code-reviews: |+
+  data: {"items":[{"label":"Adam","value":1},{"label":"Timão","value":5},{"label":"Diogo","value":6},{"label":"Inácio","value":0},{"label":"Java","value":6},{"label":"Leonardo","value":2},{"label":"Marcellus","value":7},{"label":"Praxedes","value":1}],"id":"code-reviews","updatedAt":1477233526}
+
+issues-filter: |+
+  data: {"current":136,"id":"issues-filter","updatedAt":1477258404}
+
+wip-tasks: |+
+  data: {"tasks":[{"title":"LPS-68227 As a form builder, I would like to allow the form user to jump to another page depending on a checked answer, so that he/she does not have to answer to irrelevant questions.","assignee":"Jadson Dantas"},{"title":"LPS-68288 Execute evaluation only to evaluable triggers (Fields/Forms)","assignee":"Marcellus Tavares"},{"title":"LPS-68458 Add unit tests to Forms frontend codebase","assignee":"SE Support"},{"title":"LRDOCS-2972 Document Form Rules","assignee":"Russell Bohl"}],"id":"wip-tasks","updatedAt":1477258403}
+
