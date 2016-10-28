@@ -1,3 +1,5 @@
+#\ -p 80
+
 require 'dashing'
 
 configure do
