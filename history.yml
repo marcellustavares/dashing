@@ -33,7 +33,7 @@ sprint-progress: |+
   data: {"value":51,"id":"sprint-progress","updatedAt":1477258403}
 
 code-reviews: |+
-  data: {"items":[{"label":"Adam","value":1},{"label":"Timão","value":5},{"label":"Diogo","value":6},{"label":"Inácio","value":0},{"label":"Java","value":6},{"label":"Leonardo","value":2},{"label":"Marcellus","value":7},{"label":"Praxedes","value":1}],"id":"code-reviews","updatedAt":1477233526}
+  data: {"items":[{"label":"Adam","value":2},{"label":"Timão","value":5},{"label":"Diogo","value":6},{"label":"Inácio","value":0},{"label":"Java","value":6},{"label":"Leonardo","value":2},{"label":"Marcellus","value":7},{"label":"Praxedes","value":1}],"id":"code-reviews","updatedAt":1477233526}
 
 issues-filter: |+
   data: {"current":136,"id":"issues-filter","updatedAt":1477258404}
