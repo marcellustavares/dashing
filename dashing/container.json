@@ -1,0 +1,7 @@
+{
+  "id": "dashing",
+  "type": "wedeploy/ruby",
+  "hooks": {
+    "build": "bundle install"
+  }
+}
