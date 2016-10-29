@@ -3,7 +3,8 @@
 require 'dashing'
 
 configure do
-  set :default_dashboard, 'sample'
+  set :default_dashboard, 'dashboard'
+  set :environment, :production
 end
 
 map Sinatra::Application.assets_prefix do
