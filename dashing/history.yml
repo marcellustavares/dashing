@@ -18,13 +18,13 @@ myFilter: |+
   data: {"current":3,"id":"myFilter","updatedAt":1477173448}
 
 fp-5-filter: |+
-  data: {"current":3,"id":"fp-5-filter","updatedAt":1477258403}
+  data: {"current":3,"id":"fp-5-filter","updatedAt":1477745926}
 
 fp-4-filter: |+
-  data: {"current":14,"id":"fp-4-filter","updatedAt":1477258403}
+  data: {"current":8,"id":"fp-4-filter","updatedAt":1477745926}
 
 fp-3-filter: |+
-  data: {"current":67,"id":"fp-3-filter","updatedAt":1477258403}
+  data: {"current":67,"id":"fp-3-filter","updatedAt":1477745928}
 
 sprint-days-remaining: |+
   data: {"current":0,"id":"sprint-days-remaining","updatedAt":1477258403}
@@ -33,10 +33,10 @@ sprint-progress: |+
   data: {"value":51,"id":"sprint-progress","updatedAt":1477258403}
 
 code-reviews: |+
-  data: {"items":[{"label":"Adam","value":2},{"label":"Timão","value":5},{"label":"Diogo","value":6},{"label":"Inácio","value":0},{"label":"Java","value":6},{"label":"Leonardo","value":2},{"label":"Marcellus","value":7},{"label":"Praxedes","value":1}],"id":"code-reviews","updatedAt":1477233526}
+  data: {"items":[{"label":"Adam","avatar_url":"https://avatars.githubusercontent.com/u/156064?v=3","value":0},{"label":"Timão","avatar_url":"https://avatars.githubusercontent.com/u/156388?v=3","value":5},{"label":"Diogo","avatar_url":"https://avatars.githubusercontent.com/u/20734091?v=3","value":3},{"label":"Inácio","avatar_url":"https://avatars.githubusercontent.com/u/14062516?v=3","value":0},{"label":"Java","avatar_url":"https://avatars.githubusercontent.com/u/1565721?v=3","value":0},{"label":"Leonardo","avatar_url":"https://avatars.githubusercontent.com/u/3448294?v=3","value":1},{"label":"Marcellus","avatar_url":"https://avatars.githubusercontent.com/u/286892?v=3","value":2},{"label":"Praxedes","avatar_url":"https://avatars.githubusercontent.com/u/9324099?v=3","value":2}],"id":"code-reviews","updatedAt":1477746113}
 
 issues-filter: |+
-  data: {"current":136,"id":"issues-filter","updatedAt":1477258404}
+  data: {"current":127,"id":"issues-filter","updatedAt":1477745928}
 
 wip-tasks: |+
   data: {"tasks":[{"title":"LPS-68227 As a form builder, I would like to allow the form user to jump to another page depending on a checked answer, so that he/she does not have to answer to irrelevant questions.","assignee":"Jadson Dantas"},{"title":"LPS-68288 Execute evaluation only to evaluable triggers (Fields/Forms)","assignee":"Marcellus Tavares"},{"title":"LPS-68458 Add unit tests to Forms frontend codebase","assignee":"SE Support"},{"title":"LRDOCS-2972 Document Form Rules","assignee":"Russell Bohl"}],"id":"wip-tasks","updatedAt":1477258403}
