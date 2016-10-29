@@ -59,7 +59,7 @@ def is_wip_issue?(issue)
 end
 
 SCHEDULER.every '1h', :first_in => 0 do
-  sprint_statistics = get_sprint_statistics(JIRA_SPRINT_CONFIG[:jira_url], JIRA_SPRINT_CONFIG[:jira_username], JIRA_SPRINT_CONFIG[:jira_password], JIRA_SPRINT_CONFIG[:rapid_view_id], JIRA_SPRINT_CONFIG[:sprint_id])
+  sprint_statistics = get_sprint_statistics(JIRA_SPRINT_CONFIG[:jira_url], ENV["JIRA_USERNAME"], ENV["JIRA_PASSWORD"], JIRA_SPRINT_CONFIG[:rapid_view_id], JIRA_SPRINT_CONFIG[:sprint_id])
 
   send_event('sprint-days-remaining', {current: sprint_statistics['days_remaining']})
   send_event('sprint-progress', {value: sprint_statistics['progress']})

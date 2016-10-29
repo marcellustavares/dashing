@@ -30,7 +30,7 @@ end
 
 FILTER_MAPPING.each do |mapping_name, filter|
   SCHEDULER.every '10m', :first_in => 0 do
-    total = number_of_issues(JIRA_ISSUECOUNT_CONFIG[:jira_url], JIRA_ISSUECOUNT_CONFIG[:jira_username], JIRA_ISSUECOUNT_CONFIG[:jira_password], filter)
+    total = number_of_issues(JIRA_ISSUECOUNT_CONFIG[:jira_url], ENV["JIRA_USERNAME"], ENV["JIRA_PASSWORD"], filter)
     send_event(mapping_name, {current: total})
   end
 end
