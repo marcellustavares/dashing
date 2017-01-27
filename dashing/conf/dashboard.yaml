@@ -1,3 +1,6 @@
 :jira_url: https://issues.liferay.com
-:rapid_view_id: 1718
-:sprint_id: 3946
+:forms_rapid_view_id: 1718
+:forms_sprint_id: 4492
+:workflow_rapid_view_id: 2371
+:workflow_sprint_id: 4447
+

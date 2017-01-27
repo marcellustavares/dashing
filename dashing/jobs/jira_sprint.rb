@@ -59,9 +59,13 @@ def is_wip_issue?(issue)
 end
 
 SCHEDULER.every '1h', :first_in => 0 do
-  sprint_statistics = get_sprint_statistics(JIRA_SPRINT_CONFIG[:jira_url], ENV["JIRA_USERNAME"], ENV["JIRA_PASSWORD"], JIRA_SPRINT_CONFIG[:rapid_view_id], JIRA_SPRINT_CONFIG[:sprint_id])
+  forms_print_statistics = get_sprint_statistics(JIRA_SPRINT_CONFIG[:jira_url], ENV["JIRA_USERNAME"], ENV["JIRA_PASSWORD"], JIRA_SPRINT_CONFIG[:forms_rapid_view_id], JIRA_SPRINT_CONFIG[:forms_sprint_id])
+  workflow_sprint_statistics = get_sprint_statistics(JIRA_SPRINT_CONFIG[:jira_url], ENV["JIRA_USERNAME"], ENV["JIRA_PASSWORD"], JIRA_SPRINT_CONFIG[:workflow_rapid_view_id], JIRA_SPRINT_CONFIG[:workflow_sprint_id])
+  
 
-  send_event('sprint-days-remaining', {current: sprint_statistics['days_remaining']})
-  send_event('sprint-progress', {value: sprint_statistics['progress']})
-  send_event('wip-tasks', {tasks: sprint_statistics['wip_issues']})
+  send_event('forms-sprint-days-remaining', {current: forms_print_statistics['days_remaining']})
+  send_event('forms-sprint-progress', {value: forms_print_statistics['progress']})
+  send_event('workflow-sprint-days-remaining', {current: workflow_sprint_statistics['days_remaining']})
+  send_event('workflow-sprint-progress', {value: workflow_sprint_statistics['progress']})
+  send_event('wip-tasks', {tasks: forms_print_statistics['wip_issues'] + workflow_sprint_statistics['wip_issues']})
 end
