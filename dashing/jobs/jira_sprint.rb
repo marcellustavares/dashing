@@ -25,15 +25,15 @@ def get_sprint_statistics(url, username, password, rapid_view_id, sprint_id)
   sprint_statistics = {"days_remaining" => 0, "progress" => 0, "wip_issues" => 0}
 
   sprint_statistics['days_remaining'] = sprint_data["daysRemaining"]
-  sprint_statistics['progress'] = calculate_sprint_progress(contents_data["completedIssues"].count, contents_data["issuesNotCompletedInCurrentSprint"].count)
+  sprint_statistics['progress'] = calculate_sprint_progress(contents_data["completedIssues"].count, contents_data["issuesCompletedInAnotherSprint"].count, contents_data["issuesNotCompletedInCurrentSprint"].count)
   sprint_statistics['wip_issues'] = get_wip_issues(contents_data["issuesNotCompletedInCurrentSprint"])
 
   sprint_statistics
 end
 
-def calculate_sprint_progress(completed_issues_count, not_completed_issues_count)
-  total = completed_issues_count + not_completed_issues_count
-  progress = (completed_issues_count.to_f / total) * 100
+def calculate_sprint_progress(completed_issues_count, completed_issues_from_another_sprint_count ,not_completed_issues_count)
+  total = completed_issues_count + completed_issues_from_another_sprint_count + not_completed_issues_count
+  progress = ((completed_issues_count.to_f + completed_issues_from_another_sprint_count.to_f) / total) * 100
   progress.to_i
 end
 
