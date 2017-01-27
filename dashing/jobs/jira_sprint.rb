@@ -25,15 +25,15 @@ def get_sprint_statistics(url, username, password, rapid_view_id, sprint_id)
   sprint_statistics = {"days_remaining" => 0, "progress" => 0, "wip_issues" => 0}
 
   sprint_statistics['days_remaining'] = sprint_data["daysRemaining"]
-  sprint_statistics['progress'] = calculate_sprint_progress(contents_data["completedIssues"].count, contents_data["issuesNotCompletedInCurrentSprint"].count)
+  sprint_statistics['progress'] = calculate_sprint_progress(contents_data["completedIssues"].count, contents_data["issuesCompletedInAnotherSprint"].count, contents_data["issuesNotCompletedInCurrentSprint"].count)
   sprint_statistics['wip_issues'] = get_wip_issues(contents_data["issuesNotCompletedInCurrentSprint"])
 
   sprint_statistics
 end
 
-def calculate_sprint_progress(completed_issues_count, not_completed_issues_count)
-  total = completed_issues_count + not_completed_issues_count
-  progress = (completed_issues_count.to_f / total) * 100
+def calculate_sprint_progress(completed_issues_count, completed_issues_from_another_sprint_count ,not_completed_issues_count)
+  total = completed_issues_count + completed_issues_from_another_sprint_count + not_completed_issues_count
+  progress = ((completed_issues_count.to_f + completed_issues_from_another_sprint_count.to_f) / total) * 100
   progress.to_i
 end
 
@@ -59,9 +59,13 @@ def is_wip_issue?(issue)
 end
 
 SCHEDULER.every '1h', :first_in => 0 do
-  sprint_statistics = get_sprint_statistics(JIRA_SPRINT_CONFIG[:jira_url], ENV["JIRA_USERNAME"], ENV["JIRA_PASSWORD"], JIRA_SPRINT_CONFIG[:rapid_view_id], JIRA_SPRINT_CONFIG[:sprint_id])
+  forms_print_statistics = get_sprint_statistics(JIRA_SPRINT_CONFIG[:jira_url], ENV["JIRA_USERNAME"], ENV["JIRA_PASSWORD"], JIRA_SPRINT_CONFIG[:forms_rapid_view_id], JIRA_SPRINT_CONFIG[:forms_sprint_id])
+  workflow_sprint_statistics = get_sprint_statistics(JIRA_SPRINT_CONFIG[:jira_url], ENV["JIRA_USERNAME"], ENV["JIRA_PASSWORD"], JIRA_SPRINT_CONFIG[:workflow_rapid_view_id], JIRA_SPRINT_CONFIG[:workflow_sprint_id])
+  
 
-  send_event('sprint-days-remaining', {current: sprint_statistics['days_remaining']})
-  send_event('sprint-progress', {value: sprint_statistics['progress']})
-  send_event('wip-tasks', {tasks: sprint_statistics['wip_issues']})
+  send_event('forms-sprint-days-remaining', {current: forms_print_statistics['days_remaining']})
+  send_event('forms-sprint-progress', {value: forms_print_statistics['progress']})
+  send_event('workflow-sprint-days-remaining', {current: workflow_sprint_statistics['days_remaining']})
+  send_event('workflow-sprint-progress', {value: workflow_sprint_statistics['progress']})
+  send_event('wip-tasks', {tasks: forms_print_statistics['wip_issues'] + workflow_sprint_statistics['wip_issues']})
 end
