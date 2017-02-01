@@ -1,4 +1,5 @@
 require 'net/http'
+require 'date'
 require 'json'
 require 'time'
 require 'open-uri'
@@ -48,7 +49,10 @@ def get_sprint_statistics(url, username, password, rapid_view_id, sprint_id)
 
   sprint_statistics = {"days_remaining" => 0, "progress" => 0, "wip_issues" => 0}
 
-  sprint_statistics['days_remaining'] = sprint_data["daysRemaining"]
+  endDate = Date.parse(sprint_data["endDate"])
+  today = Date.today
+
+  sprint_statistics['days_remaining'] = endDate.mjd - today.mjd
   sprint_statistics['progress'] = calculate_sprint_progress(contents_data["completedIssues"].count, contents_data["issuesCompletedInAnotherSprint"].count, contents_data["issuesNotCompletedInCurrentSprint"].count)
   sprint_statistics['wip_issues'] = get_wip_issues(contents_data["issuesNotCompletedInCurrentSprint"])
 
