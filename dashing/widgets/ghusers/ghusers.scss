@@ -4,13 +4,27 @@
 $background-color:  #ec663c;
 $value-color:       #000;
 
-$title-color:       rgba(0, 0, 0, 0.7);
-$label-color:       rgba(0, 0, 0, 0.7);
+$title-color:       rgba(0, 0, 0, 0.4);
+$label-color:       rgba(0, 0, 0, 0.4);
 
 // ----------------------------------------------------------------------------
 // Widget-list styles
 // ----------------------------------------------------------------------------
+
+.widget-ghusers.widget {
+  vertical-align: initial !important;
+
+  .title {
+    margin-top: 45px;
+    margin-bottom: 40px;
+  }
+}
+
 .widget-ghusers {
+
+  ul li {
+    margin-bottom: 5px;
+  }
 
   background-color: $background-color;
   vertical-align: top;
@@ -20,26 +34,25 @@ $label-color:       rgba(0, 0, 0, 0.7);
   }
 
   img {
-	width: 50px;
-	height: 50px;
-	border-radius: 60px;
-	border: 3px solid #b74724;
+  	width: 50px;
+  	height: 50px;
+  	border-radius: 60px;
+  	border: 3px solid rgba(0, 0, 0, 0.5);
   }
 
   .box-value {
   	width: 50px;
-	height: 40px;
-	border-radius: 60px;
-	background-color: #fff;
-	border: 3px solid #b74724;
-	padding-top: 10px;
-	float: right;
-	margin-right: 80px;
+  	height: 40px;
+  	border-radius: 60px;
+  	background-color: #fff;
+  	border: 3px solid rgba(0, 0, 0, 0.5);
+  	padding-top: 10px;
+  	float: right;
+  	margin-right: 80px;
   }
 	
   .value, .more-info, .updated-at {
-  	color: #000;
-  	font-weight: bold;
+  	color: $label-color;
   }
 
 }
