@@ -16,7 +16,7 @@ $meter-background:  darken($background-color, 30%);
   background-color: $background-color;
 
   input.meter {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
   }
 
@@ -29,7 +29,7 @@ $meter-background:  darken($background-color, 30%);
   }
 
   .updated-at {
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.6);
   }
 
 }
