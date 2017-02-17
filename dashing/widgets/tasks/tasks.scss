@@ -10,11 +10,12 @@ $label-color:       rgba(255, 255, 255, 0.7);
 // ----------------------------------------------------------------------------
 // Widget-list styles
 // ----------------------------------------------------------------------------
-.widget-tasks {
-
+.widget.widget-tasks {
   background-color: $background-color;
   vertical-align: top;
+}
 
+.widget-tasks {
   .title {
     color: $title-color;
   }
@@ -31,11 +32,11 @@ $label-color:       rgba(255, 255, 255, 0.7);
   }
 
   .label {
-    font-size: 24px;
+    font-size: 28px;
   }
 
  .assignee {
-    font-size: 14px;
+    font-size: 25px;
     padding-left:15px;
  }
 
