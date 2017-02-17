@@ -23,7 +23,7 @@ def get_sprint_id(url, username, password, rapid_view_id)
   id = 0
 
   data["values"].each do |sprint| 
-      if(sprint["state"] == "active")
+      if(sprint["state"] == "active" && sprint["originBoardId"] == rapid_view_id)
         id = sprint["id"]
         break
       end
@@ -73,7 +73,13 @@ def get_wip_issues(not_completed_issues)
 end
 
 def get_issue_title(issue)
-  issue["key"] + " " + issue["summary"]
+  title = issue["key"] + " " + issue["summary"][0..50]
+
+  if (issue["summary"].length > 50)
+    title += "..."
+  end
+
+  title
 end
 
 def is_wip_issue?(issue)
@@ -92,12 +98,13 @@ SCHEDULER.every '1h', :first_in => 0 do
 
   send_event('forms-sprint-days-remaining', {current: forms_print_statistics['days_remaining']})
   send_event('forms-sprint-progress', {value: forms_print_statistics['progress']})
+  send_event('forms-wip-tasks', {tasks: forms_print_statistics['wip_issues']})
 
   workflow_sprint_id = get_sprint_id(JIRA_SPRINT_CONFIG[:jira_url], ENV["JIRA_USERNAME"], ENV["JIRA_PASSWORD"], JIRA_SPRINT_CONFIG[:workflow_rapid_view_id])
   workflow_sprint_statistics = get_sprint_statistics(JIRA_SPRINT_CONFIG[:jira_url], ENV["JIRA_USERNAME"], ENV["JIRA_PASSWORD"], JIRA_SPRINT_CONFIG[:workflow_rapid_view_id], workflow_sprint_id)
 
   send_event('workflow-sprint-days-remaining', {current: workflow_sprint_statistics['days_remaining']})
   send_event('workflow-sprint-progress', {value: workflow_sprint_statistics['progress']})
+  send_event('workflow-wip-tasks', {tasks: workflow_sprint_statistics['wip_issues']})
 
-  send_event('wip-tasks', {tasks: forms_print_statistics['wip_issues'] + workflow_sprint_statistics['wip_issues']})
 end
