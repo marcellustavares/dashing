@@ -73,9 +73,9 @@ def get_wip_issues(not_completed_issues)
 end
 
 def get_issue_title(issue)
-  title = issue["key"] + " " + issue["summary"][0..50]
+  title = issue["key"] + " " + issue["summary"][0..40]
 
-  if (issue["summary"].length > 50)
+  if (issue["summary"].length > 40)
     title += "..."
   end
 

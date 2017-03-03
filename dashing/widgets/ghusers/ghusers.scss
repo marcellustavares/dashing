@@ -15,8 +15,8 @@ $label-color:       rgba(0, 0, 0, 0.6);
   vertical-align: initial !important;
 
   .title {
-    margin-top: 25px;
-    margin-bottom: 40px;
+    //margin-top: 25px;
+    //margin-bottom: 40px;
   }
 }
 
@@ -34,6 +34,7 @@ $label-color:       rgba(0, 0, 0, 0.6);
   }
 
   img {
+    font-size: 34px;
   	width: 50px;
   	height: 50px;
   	border-radius: 60px;
@@ -48,11 +49,25 @@ $label-color:       rgba(0, 0, 0, 0.6);
   	border: 3px solid rgba(0, 0, 0, 0.5);
   	padding-top: 10px;
   	float: right;
-  	margin-right: 80px;
+  	margin-right: 30px;
+  }
+
+  .box-label {
+    width: 50px;
+    height: 40px;
+    border-radius: 60px;
+    background-color: #fff;
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    padding-top: 10px;
+    display: inline-block;
   }
 	
   .value, .more-info, .updated-at {
   	color: $label-color;
+  }
+
+  .more-info {
+    position: static;
   }
 
 }

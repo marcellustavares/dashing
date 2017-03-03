@@ -109,7 +109,6 @@ h2 {
   font-size: 76px;
   font-weight: 700;
   color: $text-color;
-  height: 175px;
 }
 h3 {
   font-size: 25px;
@@ -155,7 +154,6 @@ h3 {
   text-align: center;
   width: inherit;
   height: inherit;
-  display: table-cell;
   vertical-align: middle;
 }
 
@@ -197,7 +195,6 @@ h3 {
 
 .updated-at {
   font-size: 22px;
-  position: absolute;
   bottom: 12px;
   left: 0;
   right: 0;
