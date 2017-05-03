@@ -4,9 +4,7 @@ $client = Octokit::Client.new(:access_token => ENV["GITHUB_CLIENT_TOKEN"])
 
 code_reviewers = {
   "brandizzi" => {"label" => "Adam"},
-  "diogo-lins" => {"label" => "Diogo"},
   "inacionery" => {"label" => "Inácio"},
-  "thiago-rocha" => {"label" => "Java"},
   "leoadb" => {"label" => "Leonardo"},
   "marcellustavares" => {"label" => "Marcellus"},
   "pedroqueiroz94" => {"label" => "Pedrinho"},
