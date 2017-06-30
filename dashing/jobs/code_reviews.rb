@@ -34,6 +34,14 @@ def portal_number_of_open_pull_requests(owner)
   end
 end
 
+def portal_ee_number_of_open_pull_requests(owner)
+  begin
+    open_pull_requets = $client.pull_requests('%{owner}/liferay-portal-ee' % {owner: owner}, :state => 'open')
+    open_pull_requets.count
+  rescue
+  end
+end
+
 def ddm_number_of_open_pull_requests(owner)
   begin
     open_pull_requets = $client.pull_requests('%{owner}/com-liferay-dynamic-data-mapping' % {owner: owner}, :state => 'open')
@@ -52,13 +60,14 @@ end
 
 SCHEDULER.every '5m', :first_in => 0 do
   code_reviewers.each {|owner, mapping| mapping['value'] = portal_number_of_open_pull_requests(owner).to_i}
+  code_reviewers.each {|owner, mapping| mapping['value'] = mapping['value'].to_i + portal_ee_number_of_open_pull_requests(owner).to_i}
   code_reviewers.each {|owner, mapping| mapping['value'] = mapping['value'].to_i + ddm_number_of_open_pull_requests(owner).to_i}
   code_reviewers.each {|owner, mapping| mapping['value'] = mapping['value'].to_i + workflow_number_of_open_pull_requests(owner).to_i}
 
   workflow_code_reviewers.each {|owner, mapping| mapping['value'] = workflow_number_of_open_pull_requests("liferay").to_i}
   code_reviewers = workflow_code_reviewers.merge(code_reviewers)
 
-  ddm_code_reviewers.each {|owner, mapping| mapping['value'] = ddm_number_of_open_pull_requests("liferay").to_i} 
+  ddm_code_reviewers.each {|owner, mapping| mapping['value'] = ddm_number_of_open_pull_requests("liferay").to_i}
   code_reviewers = ddm_code_reviewers.merge(code_reviewers)
 
   send_event('code-reviews', { items: code_reviewers.values})
