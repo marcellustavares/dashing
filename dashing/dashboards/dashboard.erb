@@ -8,52 +8,40 @@ $(function() {
 <% content_for :title do %>Forms & Workflow Dashboard<% end %>
 <div class="gridster">
   <ul>
-    <li data-row="1" data-col="1" data-sizex="4" data-sizey="2">
-      <div data-id="forms-sprint-progress" data-view="Meter" data-title="Forms' Sprint Progress" data-height="200" data-width="200" data-min="0" data-max="100" data-suffix="%" style="background-color:#52A1FD"></div>
-    </li>
-    <li data-row="1" data-col="2" data-sizex="4" data-sizey="2">
-       <div data-id="forms-sprint-days-remaining" data-view="Number" data-title="Days Remaining to the End of Forms' Sprint" style="background-color:#52A1FD"></div>
-    </li>
-    <li data-row="1" data-col="5" data-sizex="2" data-sizey="9">
-      <div data-id="code-reviews" data-view="Ghusers" data-title="Open Code Reviews" data-moreinfo="# of code review requests" style="background-color:#AB47BC"></div>
-    </li>
-    <li data-row="1" data-col="3" data-sizex="4" data-sizey="2">
-      <div data-id="workflow-sprint-progress" data-view="Meter" data-title="Workflow's Sprint Progress" data-height="200" data-width="200" data-min="0" data-max="100" data-suffix="%" style="background-color:#71C70E"></div>
-    </li>
-    <li data-row="1" data-col="4" data-sizex="4" data-sizey="2">
-      <div data-id="workflow-sprint-days-remaining" data-view="Number" data-title="Days Remaining to the End of Workflow's Sprint" style="background-color:#71C70E"></div>
-    </li>
-
-    <li data-row="2" data-col="1" data-sizex="2" data-sizey="2">
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
       <div data-id="forms-issues-filter" data-view="Number" data-title="Issues" style="background-color:#FF9800"></div>
     </li>
-    <li data-row="2" data-col="2" data-sizex="2" data-sizey="2">
+    <li data-row="1" data-col="2" data-sizex="2" data-sizey="2">
       <div data-id="forms-fp-5-filter" data-view="Number" data-title="Fix Priority 5" style="background-color:#FF9800"></div>
     </li>
-    <li data-row="2" data-col="3" data-sizex="2" data-sizey="2">
+    <li data-row="1" data-col="3" data-sizex="2" data-sizey="2">
       <div data-id="forms-fp-4-filter" data-view="Number" data-title="Fix Priority 4" style="background-color:#FF9800"></div>
     </li>
-    <li data-row="2" data-col="4" data-sizex="2" data-sizey="2">
+    <li data-row="1" data-col="4" data-sizex="2" data-sizey="2">
       <div data-id="forms-fp-3-filter" data-view="Number" data-title="Fix Priority 3" style="background-color:#FF9800"></div>
     </li>
 
-    <li data-row="2" data-col="7" data-sizex="2" data-sizey="2">
+    <li data-row="1" data-col="5" data-sizex="2" data-sizey="9">
+      <div data-id="code-reviews" data-view="Ghusers" data-title="Open Code Reviews" data-moreinfo="# of code review requests" style="background-color:#AB47BC"></div>
+    </li>
+
+    <li data-row="1" data-col="7" data-sizex="2" data-sizey="2">
       <div data-id="workflow-issues-filter" data-view="Number" data-title="Issues" style="background-color:#FF9800"></div>
     </li>
-    <li data-row="2" data-col="8" data-sizex="2" data-sizey="2">
+    <li data-row="1" data-col="8" data-sizex="2" data-sizey="2">
       <div data-id="workflow-fp-5-filter" data-view="Number" data-title="Fix Priority 5" style="background-color:#FF9800"></div>
     </li>
-    <li data-row="2" data-col="9" data-sizex="2" data-sizey="2">
+    <li data-row="1" data-col="9" data-sizex="2" data-sizey="2">
       <div data-id="workflow-fp-4-filter" data-view="Number" data-title="Fix Priority 4" style="background-color:#FF9800"></div>
     </li>
-    <li data-row="2" data-col="10" data-sizex="2" data-sizey="2">
+    <li data-row="1" data-col="10" data-sizex="2" data-sizey="2">
       <div data-id="workflow-fp-3-filter" data-view="Number" data-title="Fix Priority 3" style="background-color:#FF9800"></div>
     </li>
 
-    <li data-row="3" data-col="1" data-sizex="8" data-sizey="5">
+    <li data-row="2" data-col="1" data-sizex="8" data-sizey="7">
       <div data-id="forms-wip-tasks" data-view="Tasks" data-title="Forms'Work In Progress" style="background-color:#90A4AE"></div>
     </li>
-    <li data-row="3" data-col="5" data-sizex="8" data-sizey="5">
+    <li data-row="2" data-col="5" data-sizex="8" data-sizey="7">
       <div data-id="workflow-wip-tasks" data-view="Tasks" data-title="Workflow's Work In Progress" style="background-color:#90A4AE"></div>
     </li>
   </ul>
