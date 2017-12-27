@@ -3,12 +3,17 @@ require 'octokit'
 $client = Octokit::Client.new(:access_token => ENV["GITHUB_CLIENT_TOKEN"])
 
 code_reviewers = {
-  "brandizzi" => {"label" => "Adam"},
+  "interaminense" => {"label" => "Adriano"},
+  "alinedoleron" => {"label" => "Aline"},
+  "clovisdasilvaneto" => {"label" => "Clóvis"},
   "inacionery" => {"label" => "Inácio"},
+  "jeyvison" => {"label" => "Jeyvison "},
   "leoadb" => {"label" => "Leonardo"},
+  "marcelabc" => {"label" => "Marcela"},
   "marcellustavares" => {"label" => "Marcellus"},
-  "pedroqueiroz94" => {"label" => "Pedrinho"},
-  "rafaprax" => {"label" => "Praxedes"}
+  "pedroqueiroz94" => {"label" => "Pedro"},
+  "rafaprax" => {"label" => "Praxedes"},
+  "rodrigo-e-c-souza" => {"label" => "Rodrigo"}
 }
 
 ddm_code_reviewers = {
